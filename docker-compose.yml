@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  steam:
+    restart: always
+    image: siebes/steam:latest
+    environment:
+    - "WIDTH=1280"
+    - "HEIGHT=720"
+    - "TZ=Australia/Melbourne"
+    volumes:
+    - /tank/Application Data/Steam:/home/wine/.wine/drive_c/Program Files (x86)/Steam
+    - /tank/SteamLibrary:/games
+    - /ssd/SteamLibrary:/ssdgames
+    ports:
+    - "8888:8080"
